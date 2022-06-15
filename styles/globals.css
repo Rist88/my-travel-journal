@@ -1,9 +1,15 @@
+html {
+  font-size: 0.78rem;
+}
+
 html,
 body {
   padding: 0;
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  font-family: "Inter", sans-serif;
+  font-weight: 400;
 }
 
 a {
@@ -13,4 +19,186 @@ a {
 
 * {
   box-sizing: border-box;
+}
+
+.nav__title {
+  display: flex;
+  align-items: center;
+}
+
+/* Typography */
+.nav__title {
+  font-weight: 500;
+  font-size: 1.2rem;
+  color: #fff;
+  letter-spacing: -0.7px;
+}
+
+.nav__title h1 {
+  font-size: 1.4rem;
+  width: 9em;
+}
+.nav__icon {
+  display: inline-block;
+  max-width: 1.4em;
+  margin-right: 0.3em;
+}
+
+.card__location,
+.card__dates,
+.card__desc {
+  font-size: 1rem;
+}
+
+.card__location-country {
+  text-transform: uppercase;
+  letter-spacing: 0.16rem;
+}
+
+.card__location-maps {
+  color: inherit;
+  opacity: 55%;
+  transition: 0.3s ease;
+}
+
+.card__location-maps:hover,
+.card__location-maps:focus {
+  opacity: 40%;
+}
+
+.card__location-country-icon {
+  color: #f55a5a;
+}
+
+.card__title {
+  font-size: 1.95rem;
+  font-weight: 700;
+}
+
+.card__desc {
+  line-height: 1.5;
+}
+
+/* Layout */
+
+.navigation {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 10vh;
+  background: #f55a5a;
+  padding: 0.8em 0;
+}
+
+.main {
+  padding: 3em;
+  display: flex;
+  flex-direction: column;
+  gap: 3em;
+}
+.card {
+  display: grid;
+  margin: 0 auto;
+  width: max-content;
+  grid-template-columns: 153px 1fr;
+  grid-template-rows: repeat(4, minmax(min-content, max-content));
+  grid-column-gap: 1.5em;
+  grid-row-gap: 0;
+  /* grid-template-areas: 
+      "img location"
+      "img title"
+      "img dates"
+      "img desc"; */
+
+  /* background: lightskyblue; */
+  /* border: 1px black solid; */
+}
+
+.card__image {
+  /* grid-area: "img"; */
+  height: 210px;
+  grid-column: 1 / 2;
+  grid-row: 1 / 5;
+  margin: 0;
+}
+
+.card__image > img {
+  border-radius: 0.4em;
+  display: block;
+  max-width: 100%;
+  height: 100%;
+  object-fit: cover;
+  padding: 0;
+  margin: 0;
+}
+
+/* kill top-margins (custom indent by margin-bottom in every field) */
+.card__title,
+.card__dates,
+.card__desc {
+  margin-top: 0;
+}
+
+/* column-2 top & bottom indentation */
+
+.card__location {
+  margin-top: 1.5em;
+}
+
+.card__desc {
+  margin-bottom: 1.5em;
+}
+
+/**********/
+
+.card__location {
+  /* grid-area: "location"; */
+  grid-column: 2 / 3;
+  grid-row: 1 / 2;
+  display: flex;
+  align-items: center;
+  gap: 0.7em;
+  /* background: lightcyan; */
+  padding: 0;
+  margin-bottom: 0;
+}
+
+.card__location-country {
+  display: flex;
+  margin: 0;
+}
+
+.card__location-country-icon {
+  display: inline-block;
+  width: 15px;
+  margin-right: 0.3em;
+}
+
+.card__location-maps {
+  margin: 0;
+}
+
+.card__title {
+  grid-area: "title";
+  grid-column: 2 / 3;
+  grid-row: 2 / 3;
+  /* background: lightgreen; */
+  margin-bottom: 0.3em;
+  max-width: 325px;
+}
+
+.card__dates {
+  grid-area: "dates";
+  grid-column: 2 / 3;
+  grid-row: 3 / 4;
+  /* background: yellow; */
+  margin-bottom: 0;
+}
+
+.card__desc {
+  grid-area: "desc";
+  grid-column: 2 / 3;
+  grid-row: 4 / 5;
+  /* background: plum; */
+  width: 366px;
 }
