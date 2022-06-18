@@ -3,8 +3,6 @@ import Head from "next/head";
 import Navigation from "../components/Navigetion";
 import Card from "../components/Card";
 import data from "../lib/data";
-import Image from "next/image";
-import styles from "../styles/Home.module.css";
 
 const Home: NextPage = () => {
   const cards = data.map((item) => {
